@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Color Game</title>
+    <link rel="stylesheet" href="colorGame.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <section id="app">
+        <h1 :style="{background: pickedColor}">
+            The Great
+            <br>
+            <span>{{ pickedColor }}</span>
+            <br>
+            Color Game
+        </h1>
+        <div id="stripe">
+            <button @click="selectGameMode(6)">New Colors</button>
+            <span id="message"></span>
+            <button @click="selectGameMode(3)">Easy</button>
+            <button @click="selectGameMode(6)" class="selected">Hard</button>
+        </div>
+        <div id="container">
+            <div class="square" :style="{background: square1}" @click="checkSquare(1)"></div>
+            <div class="square" :style="{background: square2}" @click="checkSquare(2)"></div>
+            <div class="square" :style="{background: square3}" @click="checkSquare(3)"></div>
+            <div class="square" :style="{background: square4}" @click="checkSquare(4)"></div>
+            <div class="square" :style="{background: square5}" @click="checkSquare(5)"></div>
+            <div class="square" :style="{background: square6}" @click="checkSquare(6)"></div>
+        </div>
+    </section>
+</body>
+</html>
